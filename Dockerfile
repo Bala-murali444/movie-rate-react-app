@@ -1,16 +1,13 @@
 FROM node:alpine
 
-RUN apk add --no-cache bash
+ENV NODE_ENV=production
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
-COPY package*.json ./
+COPY ["package.json", "package-lock.json*", "./"]
 
-RUN npm install
+RUN npm install --production
 
 COPY . .
 
-EXPOSE 8000
-
-
-CMD ["node","Movies.js"]
+CMD [ "node", "Movies.js" ]
