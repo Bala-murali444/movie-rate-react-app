@@ -7,33 +7,7 @@ const SEARCH_API = "https://api.themoviedb.org/3/search/movie?&api_key=04c35731a
 function App(){
   const [movies, setMovies] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
-  const friendOptions = [
-    {
-      key: 'Jenny Hess',
-      text: 'Jenny Hess',
-      value: 'Jenny Hess',
-      image: { avatar: true, src: '/images/avatar/small/jenny.jpg' },
-    },
-    {
-      key: 'Elliot Fu',
-      text: 'Elliot Fu',
-      value: 'Elliot Fu',
-      image: { avatar: true, src: '/images/avatar/small/elliot.jpg' },
-    },
-    {
-      key: 'Stevie Feliciano',
-      text: 'Stevie Feliciano',
-      value: 'Stevie Feliciano',
-      image: { avatar: true, src: '/images/avatar/small/stevie.jpg' },
-    },
-    {
-      key: 'Christian',
-      text: 'Christian',
-      value: 'Christian',
-      image: { avatar: true, src: '/images/avatar/small/christian.jpg' },
-    },
-  ]
-
+  
   useEffect(() => {
     getMovies(FEATURED_API);
   },[]);
