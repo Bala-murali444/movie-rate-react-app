@@ -1,16 +1,17 @@
-FROM node
+FROM node:alpine
 
-RUN apt-get update && apt-get upgrade -y \
-    && apt-get clean
+RUN apk add --no-cache bash
 
-RUN mkdir /app
 WORKDIR /app
 
-COPY package.json /app/
-RUN npm install --only=production
+COPY package.json .
 
-COPY src /app/src
+RUN npm install
 
-EXPOSE 3000
+COPY . .
 
-CMD [ "npm", "start" ]
+EXPOSE 9005
+
+ENTRYPOINT ["node"]
+
+CMD ["Movies.js"]
