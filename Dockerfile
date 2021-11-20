@@ -2,16 +2,15 @@ FROM node:alpine
 
 RUN apk add --no-cache bash
 
-WORKDIR /app
+WORKDIR /usr/src/app
 
-COPY package.json .
+COPY package*.json ./
 
 RUN npm install
 
 COPY . .
 
-EXPOSE 9005
+EXPOSE 8000
 
-ENTRYPOINT ["node"]
 
-CMD ["Movies.js"]
+CMD ["node","Movies.js"]
