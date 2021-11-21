@@ -36,7 +36,7 @@ function App(){
   return (
     <React.Fragment>
     <header>
-      <span className="logo">HBOmovie's</span>
+      <span className="logo">HanK movie's</span>
       <form onSubmit={handleOnSubmit}>
         <input className="search" type="search" placeholder="Search...." value={searchTerm} onChange={handleOnChange}/>
       </form>
